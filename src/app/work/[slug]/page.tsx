@@ -93,7 +93,7 @@ export default async function ProjectCaseStudy({ params }: Props) {
         </Reveal>
 
         <Reveal>
-          <div className="mb-20 overflow-hidden border border-border bg-surface">
+          <div className="mb-20 overflow-hidden rounded-card border border-border bg-surface">
             <ProjectArt art={project.art} />
           </div>
         </Reveal>

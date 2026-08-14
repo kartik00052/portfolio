@@ -41,10 +41,18 @@ export default function Intro() {
     <section
       ref={ref}
       id="identity"
-      className="relative border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="relative overflow-hidden border-t border-border px-5 py-28 md:px-10 md:py-40"
       data-nav-section
     >
-      <div className="mx-auto max-w-[1440px]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="shape-ring shape-spin absolute -right-20 top-1/3 h-64 w-64 opacity-30 md:h-96 md:w-96" />
+        <div className="shape-ring-accent shape-float absolute bottom-[12%] left-[6%] hidden h-12 w-12 md:block" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1440px]">
         <Reveal>
           <SectionLabel index="01" label="Identity" className="mb-14" />
         </Reveal>
@@ -53,7 +61,7 @@ export default function Intro() {
           <p
             data-intro="shadow"
             aria-hidden="true"
-            className="font-display pointer-events-none absolute inset-x-0 top-0 -z-10 select-none text-[22vw] leading-none font-semibold tracking-tight text-border/60 md:text-[13vw]"
+            className="font-display watermark pointer-events-none absolute inset-x-0 top-0 -z-10 select-none text-border/60"
           >
             SYSTEMS
           </p>

@@ -26,10 +26,17 @@ export default function AboutPreview() {
   return (
     <section
       id="about"
-      className="border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="relative overflow-hidden border-t border-border px-5 py-28 md:px-10 md:py-40"
       data-nav-section
     >
-      <div className="mx-auto max-w-[1440px]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="shape-ring shape-float absolute -right-16 bottom-[15%] h-56 w-56 opacity-30 md:h-80 md:w-80" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1440px]">
         <Reveal>
           <SectionLabel index="06" label="About" className="mb-16" />
         </Reveal>

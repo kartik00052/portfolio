@@ -49,10 +49,18 @@ export default function ContactCTA() {
     >
       <p
         aria-hidden="true"
-        className="font-display pointer-events-none absolute inset-x-0 top-6 select-none text-center text-[18vw] leading-none font-semibold tracking-tight text-border/40"
+        className="font-display watermark pointer-events-none absolute inset-x-0 top-6 select-none text-center text-border/40"
       >
         CONTACT
       </p>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="shape-ring shape-float absolute -left-24 bottom-[8%] h-64 w-64 opacity-30 md:h-96 md:w-96" />
+        <div className="shape-grid absolute right-[4%] top-[20%] hidden h-40 w-40 opacity-50 md:block" />
+      </div>
 
       <div className="relative mx-auto max-w-[1440px]">
         <div className="flex justify-end">
@@ -78,7 +86,7 @@ export default function ContactCTA() {
                 href={`mailto:${email}?subject=Let's%20build%20something%20intelligent`}
                 className={cn(
                   "group flex items-center gap-3 border border-accent bg-accent px-8 py-5 text-sm font-semibold text-background",
-                  "transition-[box-shadow,transform] duration-300 hover:shadow-[8px_8px_0_0_var(--accent-soft)]"
+                  "transition-[box-shadow,transform] duration-300 hover:shadow-[8px_8px_0_0_var(--accent-soft)] hover:-translate-y-1"
                 )}
                 data-cursor-text="EMAIL"
               >
@@ -92,7 +100,7 @@ export default function ContactCTA() {
                 href={SOCIALS.github.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 border border-border px-8 py-5 text-sm font-medium text-foreground transition-colors duration-300 hover:border-accent hover:text-accent"
+                className="hover-spring flex items-center gap-3 rounded-full border border-border px-8 py-5 text-sm font-medium text-foreground hover:-translate-y-1 hover:border-accent hover:text-accent"
                 data-cursor-text="OPEN"
               >
                 <GithubIcon className="h-4 w-4" />
@@ -104,7 +112,7 @@ export default function ContactCTA() {
                 href={SOCIALS.linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 border border-border px-8 py-5 text-sm font-medium text-foreground transition-colors duration-300 hover:border-accent hover:text-accent"
+                className="hover-spring flex items-center gap-3 rounded-full border border-border px-8 py-5 text-sm font-medium text-foreground hover:-translate-y-1 hover:border-accent hover:text-accent"
                 data-cursor-text="OPEN"
               >
                 <LinkedinIcon className="h-4 w-4" />

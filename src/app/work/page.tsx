@@ -73,7 +73,7 @@ export default function WorkIndexPage() {
 
         <div className="mt-16">
           <Reveal>
-            <div className="overflow-hidden border border-border bg-surface">
+            <div className="overflow-hidden rounded-card border border-border bg-surface">
               <ProjectArt art={PROJECTS[0].art} />
             </div>
           </Reveal>

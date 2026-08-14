@@ -6,7 +6,7 @@ export default function HeroVisual() {
       <div className="flex justify-end">
         <div
           data-hero="terminal"
-          className="font-mono w-full max-w-[340px] border border-border bg-surface/60 p-4 text-[13px] leading-relaxed"
+          className="font-mono w-full max-w-[340px] rounded-card border border-border bg-surface/80 p-4 text-[13px] leading-relaxed shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)] backdrop-blur-sm md:p-5"
         >
           <div className="mb-2 flex gap-1.5" aria-hidden="true">
             <span className="h-2 w-2 rounded-full bg-border" />
