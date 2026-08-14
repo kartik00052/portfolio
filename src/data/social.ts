@@ -6,13 +6,12 @@ export const SOCIALS = {
   },
   linkedin: {
     label: "LinkedIn",
-    handle: "[ADD YOUR LINKEDIN]",
-    url: "https://www.linkedin.com/in/[ADD-YOUR-LINKEDIN-USERNAME]",
+    handle: "kartik005204b283299",
+    url: "https://www.linkedin.com/in/kartik005204b283299",
   },
   email: {
     label: "Email",
-    // TODO: replace with your real email address
-    address: "hello@example.com",
+    address: "kartik.28520@gmail.com",
   },
 } as const;
 
