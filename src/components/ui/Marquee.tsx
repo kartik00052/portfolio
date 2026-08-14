@@ -27,10 +27,10 @@ export default function Marquee({
           <div key={half} className="flex shrink-0 items-center">
             {row.map((item, i) => (
               <Fragment key={`${half}-${i}`}>
-                <span className="font-display text-[10vw] leading-none font-semibold uppercase tracking-tight text-muted md:text-[7vw]">
+                <span className="font-display text-[10vw] leading-none font-semibold uppercase tracking-tight text-muted/80 md:text-[7vw]">
                   {item}
                 </span>
-                <span className="mx-[3vw] inline-block h-[1.2vw] w-[1.2vw] rounded-full bg-accent" />
+                <span className="mx-[3vw] inline-block h-[1.2vw] w-[1.2vw] rounded-full bg-peach-deep" />
               </Fragment>
             ))}
           </div>

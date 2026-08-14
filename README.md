@@ -18,7 +18,7 @@ Built with **Next.js 16** (App Router, React 19, TypeScript), **Tailwind CSS v4*
 | Scroll engine | Lenis (smooth scroll) | 1.3.26 | `npm i lenis` | `src/components/animations/SmoothScroll.tsx` |
 | Motion (React-first) | Framer Motion | 13.1.0 | `npm i framer-motion` | `src/components/sections/Skills.tsx` (AnimatePresence) |
 | Icons | lucide-react | 1.31.0 | `npm i lucide-react` | `src/components/ui/icons.tsx` (custom brand icons — lucide has no `Github`/`Linkedin` exports) |
-| Fonts | Geist / Geist Mono / Space Grotesk | — | `next/font/google` (no npm install) | `src/app/layout.tsx` |
+| Fonts | Sora (display/sans) + Geist Mono (labels) | — | `next/font/google` (no npm install) | `src/app/layout.tsx` |
 | Linting | ESLint + eslint-config-next | ^9 / 16.3.1 | (via create-next-app) | `eslint.config.mjs` |
 
 > Runtime versions verified: Node 24.13.0, npm 11.6.2.
@@ -29,7 +29,7 @@ Built with **Next.js 16** (App Router, React 19, TypeScript), **Tailwind CSS v4*
 
 - **Motion engineering** — GSAP timeline orchestration (masked line reveals, `back.out` overshoot), ScrollTrigger scroll-scrubbed effects, springy hover curves `cubic-bezier(.275,2.254,.281,.996)`, Lenis↔ScrollTrigger sync, Framer Motion `AnimatePresence` for state-driven UI.
 - **Design systems** — CSS-first tokens via Tailwind v4 `@theme inline`: color, type scale (`display-xl/lg/md/sm`, `watermark`, `label`), shape language (`rounded-card`, rings, dot-grids), easing tokens, global reduced-motion policy.
-- **Editorial typography** — Space Grotesk display face with tight negative tracking, `clamp()` fluid sizing, giant watermark text behind sections.
+- **Editorial typography** — Sora display face with tight negative tracking (Goga-like), `clamp()` fluid sizing, giant stroked/watermark text behind and within sections.
 - **Server rendering / RSC architecture** — Server Components for pages + GitHub data, Client Components ("use client") only where interactivity/animations require it.
 - **API integration with graceful fallback** — server-only GitHub API client (`lib/github.ts`) that falls back to static data when no `GITHUB_TOKEN` is present.
 - **Accessibility** — `prefers-reduced-motion` respected everywhere, semantic landmarks, `aria` on decorative art/overlays, visible `:focus-visible`, custom cursor only on fine pointers.
@@ -75,8 +75,8 @@ src/
     not-found.tsx, sitemap.ts, robots.ts, icon.svg, opengraph-image.tsx
   components/
     animations/              # Reveal, TextReveal, Magnetic, Parallax, SmoothScroll (Lenis + scrollToSection)
-    hero/                    # Hero.tsx (GSAP timeline) + HeroText, HeroVisual
-    layout/                  # Navbar (hide/show, section observer, mobile menu), Footer, PageTransition (accent wipe)
+    hero/                    # Hero.tsx (GSAP timeline) + HeroText, CoderIllustration (animated SVG)
+    layout/                  # Navbar (floating pill, section observer, mobile menu), Footer (giant name + email CTA), PageTransition (accent wipe)
     projects/                # ProjectShowcase (sticky-rail + rounded cards), ProjectArt (5 generative SVG covers)
     sections/                # Intro, Skills, GithubActivity, ResearchSection, AboutPreview, ContactCTA
     ui/                      # Marquee, SectionLabel, Button, CustomCursor, Grain, icons (GitHub/LinkedIn SVG)
@@ -97,18 +97,19 @@ src/
 
 | Token | Value | Used for |
 | --- | --- | --- |
-| `--background` | `#0b0b0a` | page bg |
-| `--foreground` | `#f3f1ea` | body text |
-| `--muted` | `#8e8c84` | secondary text |
-| `--accent` | `#c8ff2e` | lime highlight |
-| `--border` | `#23231e` | hairlines |
-| `--surface` | `#12120e` | card bg |
+| `--background` | `#faf6ef` | warm cream page bg |
+| `--foreground` | `#2b2825` | warm ink text |
+| `--muted` | `#96908c` | secondary text (Juan grey) |
+| `--accent` | `#2e54fe` | blue — links, dots, active states |
+| `--peach` / `--peach-deep` | `#ffbc95` / `#f99e76` | hero panel, marquee dots, footer name |
+| `--grey-surface` | `#f4f4f4` | card / panel surface |
+| `--border` | `#dcd6cd` | warm hairlines |
 | `--ease-spring` | `cubic-bezier(.275,2.254,.281,.996)` | hovers/bounces |
 | `--ease-out` | `cubic-bezier(.165,.84,.44,1)` | reveals |
 
-Utilities: `.display-xl/lg/md/sm`, `.watermark`, `.label` (mono uppercase), `.line-mask`, `.link-line`, `.rounded-card`, `.shape-ring`, `.shape-grid`, `.shape-float`, `.shape-spin`, `.hover-spring`, `.blur-in`, `.grain`.
+Utilities: `.display-xl/lg/md/sm`, `.watermark`, `.label` (mono uppercase), `.giant-cta`, `.text-outline-grey` / `.text-outline-peach` (stroked display text), `.pill` (blurred nav surface), `.line-mask`, `.link-line`, `.rounded-card`, `.shape-ring`, `.shape-grid`, `.shape-float`, `.shape-spin`, `.hover-spring`, `.blur-in`, `.grain`, plus coder-illustration keyframes (`coder-blink`, `coder-type`, `coder-chip`).
 
-**Design lineage**: motion/tone is influenced by award-site portfolios (Juan Mora) — oversized negative-tracked type, springy easing, sticky-rail work composition, floating shapes — but the palette, type voice, content, and structure are original.
+**Design lineage**: adapted from award-site portfolios (Juan Mora) — warm light palette (cream/peach/blue/grey), giant negative-tracked type (Sora ≈ Goga), springy overshoot easing, floating pill navigation, rounded shapes, sticky-rail work composition, and a full-height orange hero panel with an animated "developer at a laptop" SVG illustration. Copy, content, and the illustration are original for Kartik; palette + motion system intentionally follow the reference direction.
 
 ---
 

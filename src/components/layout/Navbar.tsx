@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { GithubIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 import { SOCIALS } from "@/data/social";
 import { scrollToSection } from "@/components/animations/SmoothScroll";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,6 @@ const SECTION_IDS = ["work", "about", "research", "contact"];
 export default function Navbar() {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
-  const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [open, setOpen] = useState(false);
@@ -35,7 +34,6 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 40);
       setHidden(y > 140 && y > lastY.current);
       lastY.current = y;
     };
@@ -80,40 +78,48 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        ref={navRef}
+      <div
         className={cn(
-          "fixed inset-x-0 top-0 z-[150] transition-[transform,background-color,border-color] duration-500",
-          hidden ? "-translate-y-full" : "translate-y-0",
-          scrolled
-            ? "border-b border-border bg-background/80 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent"
+          "fixed inset-x-0 top-3 z-[150] flex justify-center px-4 transition-transform duration-500",
+          hidden ? "-translate-y-[150%]" : "translate-y-0"
         )}
       >
-        <nav
-          aria-label="Main"
-          className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10"
+        <header
+          ref={navRef}
+          className="pill flex w-full max-w-fit items-center gap-1 rounded-full py-1.5 pl-5 pr-2 shadow-[0_10px_40px_-12px_rgba(43,40,37,0.25)]"
         >
           <Link
             href="/"
-            className="label link-line text-foreground hover:text-accent"
+            className="mr-3 flex items-center gap-2 text-foreground transition-transform duration-300 hover:scale-[0.92]"
             aria-label="Kartik Sharma — home"
           >
-            KARTIK<span className="text-accent">_</span>SHARMA
+            <span className="font-display text-lg font-semibold tracking-tight">
+              Kartik
+            </span>
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-accent"
+              aria-hidden="true"
+            />
           </Link>
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-1 md:flex">
             {LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={(e) => goSection(e, link.label)}
                   className={cn(
-                    "label link-line text-muted transition-colors hover:text-foreground",
+                    "relative rounded-full px-3.5 py-2 text-[15px] font-medium text-muted transition-all duration-300 hover:scale-[0.92] hover:text-foreground",
                     active === link.label && "text-foreground"
                   )}
                 >
                   {link.label}
+                  {active === link.label && (
+                    <span
+                      className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-accent"
+                      aria-hidden="true"
+                    />
+                  )}
                   {active === link.label && (
                     <span className="sr-only">(current)</span>
                   )}
@@ -122,32 +128,42 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4">
+          <div className="ml-2 flex items-center gap-1.5">
             <a
               href={SOCIALS.github.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition-colors hover:text-accent"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-all duration-300 hover:scale-90 hover:bg-peach hover:text-foreground"
               aria-label="GitHub profile"
               data-cursor-text="OPEN"
             >
-              <GithubIcon className="h-5 w-5" />
+              <GithubIcon className="h-[18px] w-[18px]" />
+            </a>
+            <a
+              href={SOCIALS.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden h-9 w-9 items-center justify-center rounded-full text-muted transition-all duration-300 hover:scale-90 hover:bg-peach hover:text-foreground sm:flex"
+              aria-label="LinkedIn profile"
+              data-cursor-text="OPEN"
+            >
+              <LinkedinIcon className="h-[18px] w-[18px]" />
             </a>
             <button
-              className="text-foreground md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-foreground md:hidden"
               onClick={() => setOpen(!open)}
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
             >
-              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
-        </nav>
-      </header>
+        </header>
+      </div>
 
       <div
         className={cn(
-          "fixed inset-0 z-[140] flex flex-col items-center justify-center gap-8 bg-background transition-opacity duration-500 md:hidden",
+          "fixed inset-0 z-[140] flex flex-col items-center justify-center gap-6 bg-background transition-opacity duration-500 md:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         aria-hidden={!open}
@@ -160,21 +176,34 @@ export default function Navbar() {
               goSection(e, link.label);
               setOpen(false);
             }}
-            className="font-display text-4xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+            className="font-display text-5xl font-semibold tracking-tight text-foreground transition-transform duration-300 hover:scale-95"
             style={{ transitionDelay: `${i * 40}ms` }}
           >
             {link.label}
           </Link>
         ))}
-        <a
-          href={SOCIALS.github.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setOpen(false)}
-          className="label mt-4 text-muted hover:text-accent"
-        >
-          GitHub →
-        </a>
+        <div className="mt-6 flex items-center gap-3">
+          <a
+            href={SOCIALS.github.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-foreground"
+            aria-label="GitHub profile"
+          >
+            <GithubIcon className="h-5 w-5" />
+          </a>
+          <a
+            href={SOCIALS.linkedin.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-foreground"
+            aria-label="LinkedIn profile"
+          >
+            <LinkedinIcon className="h-5 w-5" />
+          </a>
+        </div>
       </div>
     </>
   );

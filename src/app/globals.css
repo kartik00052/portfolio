@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0b0a;
-  --foreground: #f3f1ea;
-  --muted: #8e8c84;
-  --accent: #c8ff2e;
-  --accent-soft: rgba(200, 255, 46, 0.12);
-  --border: #23231e;
-  --surface: #12120e;
+  --background: #faf6ef;
+  --foreground: #2b2825;
+  --muted: #96908c;
+  --accent: #2e54fe;
+  --accent-soft: rgba(46, 84, 254, 0.14);
+  --peach: #ffbc95;
+  --peach-deep: #f99e76;
+  --grey-surface: #f4f4f4;
+  --border: #dcd6cd;
+  --surface: #f4f4f4;
   --ease-spring: cubic-bezier(0.275, 2.254, 0.281, 0.996);
   --ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -18,10 +21,13 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-peach: var(--peach);
+  --color-peach-deep: var(--peach-deep);
+  --color-grey-surface: var(--grey-surface);
   --color-border: var(--border);
   --color-surface: var(--surface);
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-sora);
+  --font-display: var(--font-sora);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -32,7 +38,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-sora), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
@@ -40,7 +46,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #0b0b0a;
+  color: #faf6ef;
 }
 
 :focus-visible {
@@ -66,7 +72,7 @@ button {
 
 /* ----- Typography helpers ----- */
 .font-display {
-  font-family: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
+  font-family: var(--font-sora), var(--font-geist-mono), sans-serif;
 }
 
 .tracking-display {
@@ -76,14 +82,14 @@ button {
 .display-xl {
   font-size: clamp(3.2rem, 11vw, 10.5rem);
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.045em;
   font-weight: 600;
 }
 
 .display-lg {
   font-size: clamp(2.4rem, 7vw, 6.5rem);
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   font-weight: 600;
 }
 
@@ -114,6 +120,33 @@ button {
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+/* Outlined display text (footer name, decorative words) */
+.text-outline-peach {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--peach-deep);
+}
+
+.text-outline-grey {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--muted);
+}
+
+/* Giant CTA text (email link) */
+.giant-cta {
+  font-size: clamp(3rem, 10vw, 9.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+/* Pill navigation surface */
+.pill {
+  background: color-mix(in srgb, var(--background) 78%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
 }
 
 /* ----- Reveal line masks ----- */
@@ -216,7 +249,7 @@ button {
 }
 
 .shape-ring-accent {
-  border-color: rgba(200, 255, 46, 0.4);
+  border-color: rgba(46, 84, 254, 0.35);
 }
 
 .shape-grid {
@@ -225,7 +258,7 @@ button {
 }
 
 .shape-grid-accent {
-  background-image: radial-gradient(rgba(200, 255, 46, 0.5) 1px, transparent 1.5px);
+  background-image: radial-gradient(rgba(46, 84, 254, 0.45) 1px, transparent 1.5px);
   background-size: 18px 18px;
 }
 
@@ -277,6 +310,51 @@ button {
 @keyframes spin-slow {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ----- Coder illustration animations ----- */
+.coder-blink {
+  animation: coder-blink 1.1s steps(1) infinite;
+}
+
+.coder-type {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: coder-type 1.5s var(--ease-out) infinite alternate;
+}
+
+.coder-chip {
+  animation: coder-chip 6s ease-in-out infinite;
+}
+
+@keyframes coder-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes coder-type {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--l, 60px);
+  }
+}
+
+@keyframes coder-chip {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
   }
 }
 
