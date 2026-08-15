@@ -63,12 +63,12 @@ export default function Footer() {
             aria-hidden="true"
             className="font-display watermark pointer-events-none select-none text-peach-deep/70"
           >
-            SHARMA
+            DHAMA
           </p>
         </div>
 
         <div className="mt-8 flex flex-col gap-2 border-t border-border py-6 md:flex-row md:items-center md:justify-between">
-          <p className="label text-muted">© 2026 Kartik Sharma</p>
+          <p className="label text-muted">© 2026 Devansh Dhama</p>
           <p className="label text-muted">
             Built with Next.js · AI/ML Engineer · India
           </p>

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "ML Backend",
     "LangGraph",
     "FastAPI",
-    "Kartik Sharma",
+    "Devansh Dhama",
   ],
   openGraph: {
     type: "website",

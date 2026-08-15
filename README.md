@@ -1,6 +1,6 @@
-# Kartik Sharma — Portfolio
+# Devansh Dhama — Portfolio
 
-A premium, motion-heavy portfolio for **Kartik Sharma** — AI/ML Engineer · ML Backend · LLM & RAG.
+A premium, motion-heavy portfolio for **Devansh Dhama** — AI/ML Engineer · ML Backend · LLM & RAG.
 
 Built with **Next.js 16** (App Router, React 19, TypeScript), **Tailwind CSS v4**, and a GSAP/Lenis/Framer Motion animation stack. All content is sourced from the real GitHub profile [`kartik00052`](https://github.com/kartik00052) — no fabricated metrics.
 
@@ -109,7 +109,7 @@ src/
 
 Utilities: `.display-xl/lg/md/sm`, `.watermark`, `.label` (mono uppercase), `.giant-cta`, `.text-outline-grey` / `.text-outline-peach` (stroked display text), `.pill` (blurred nav surface), `.line-mask`, `.link-line`, `.rounded-card`, `.shape-ring`, `.shape-grid`, `.shape-float`, `.shape-spin`, `.hover-spring`, `.blur-in`, `.grain`, plus coder-illustration keyframes (`coder-blink`, `coder-type`, `coder-chip`).
 
-**Design lineage**: adapted from award-site portfolios (Juan Mora) — warm light palette (cream/peach/blue/grey), giant negative-tracked type (Sora ≈ Goga), springy overshoot easing, floating pill navigation, rounded shapes, sticky-rail work composition, and a full-height orange hero panel with an animated "developer at a laptop" SVG illustration. Copy, content, and the illustration are original for Kartik; palette + motion system intentionally follow the reference direction.
+**Design lineage**: adapted from award-site portfolios (Juan Mora) — warm light palette (cream/peach/blue/grey), giant negative-tracked type (Sora ≈ Goga), springy overshoot easing, floating pill navigation, rounded shapes, sticky-rail work composition, and a full-height orange hero panel with an animated "developer at a laptop" SVG illustration. Copy, content, and the illustration are original for Devansh; palette + motion system intentionally follow the reference direction.
 
 ---
 

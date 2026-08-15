@@ -6,17 +6,17 @@ export const SOCIALS = {
   },
   linkedin: {
     label: "LinkedIn",
-    handle: "kartik005204b283299",
-    url: "https://www.linkedin.com/in/kartik005204b283299",
+    handle: "devansh-dhama-140b65347",
+    url: "https://www.linkedin.com/in/devansh-dhama-140b65347",
   },
   email: {
     label: "Email",
-    address: "kartik.28520@gmail.com",
+    address: "sioneyoyoy@gmail.com",
   },
 } as const;
 
 export const PROFILE = {
-  name: "Kartik Sharma",
+  name: "Devansh Dhama",
   title: "AI/ML Engineer",
   tagline: "I build intelligent systems — RAG pipelines, ML backends, and agentic infrastructure that ship.",
   location: "India",

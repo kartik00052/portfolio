@@ -91,10 +91,10 @@ export default function Navbar() {
           <Link
             href="/"
             className="mr-3 flex items-center gap-2 text-foreground transition-transform duration-300 hover:scale-[0.92]"
-            aria-label="Kartik Sharma — home"
+            aria-label="Devansh Dhama — home"
           >
             <span className="font-display text-lg font-semibold tracking-tight">
-              Kartik
+              Devansh Dhama
             </span>
             <span
               className="h-1.5 w-1.5 rounded-full bg-accent"
