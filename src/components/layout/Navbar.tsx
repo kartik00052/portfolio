@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/icons";
 import { SOCIALS } from "@/data/social";
 import { scrollToSection } from "@/components/animations/SmoothScroll";
 import { cn } from "@/lib/utils";
@@ -149,6 +149,16 @@ export default function Navbar() {
             >
               <LinkedinIcon className="h-[18px] w-[18px]" />
             </a>
+            <a
+              href={SOCIALS.leetcode.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden h-9 w-9 items-center justify-center rounded-full text-muted transition-all duration-300 hover:scale-90 hover:bg-peach hover:text-foreground lg:flex"
+              aria-label="LeetCode profile"
+              data-cursor-text="OPEN"
+            >
+              <LeetcodeIcon className="h-[18px] w-[18px]" />
+            </a>
             <button
               className="flex h-9 w-9 items-center justify-center rounded-full text-foreground md:hidden"
               onClick={() => setOpen(!open)}
@@ -202,6 +212,16 @@ export default function Navbar() {
             aria-label="LinkedIn profile"
           >
             <LinkedinIcon className="h-5 w-5" />
+          </a>
+          <a
+            href={SOCIALS.leetcode.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-foreground"
+            aria-label="LeetCode profile"
+          >
+            <LeetcodeIcon className="h-5 w-5" />
           </a>
         </div>
       </div>

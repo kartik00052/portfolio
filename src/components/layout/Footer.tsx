@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/icons";
 import { SOCIALS } from "@/data/social";
 
 const NAV = [
@@ -56,6 +56,15 @@ export default function Footer() {
               data-cursor-text="OPEN"
             >
               <LinkedinIcon className="h-4 w-4" /> LinkedIn ↗
+            </a>
+            <a
+              href={SOCIALS.leetcode.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-line inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
+              data-cursor-text="OPEN"
+            >
+              <LeetcodeIcon className="h-4 w-4" /> LeetCode ↗
             </a>
           </div>
 

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/icons";
 import Magnetic from "@/components/animations/Magnetic";
 import { SOCIALS } from "@/data/social";
 import { cn } from "@/lib/utils";
@@ -117,6 +117,18 @@ export default function ContactCTA() {
               >
                 <LinkedinIcon className="h-4 w-4" />
                 LinkedIn
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={SOCIALS.leetcode.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-spring flex items-center gap-3 rounded-full border border-border px-8 py-5 text-sm font-medium text-foreground hover:-translate-y-1 hover:border-accent hover:text-accent"
+                data-cursor-text="OPEN"
+              >
+                <LeetcodeIcon className="h-4 w-4" />
+                LeetCode
               </a>
             </Magnetic>
           </div>

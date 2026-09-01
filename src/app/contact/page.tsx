@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/icons";
 import { SOCIALS, PROFILE } from "@/data/social";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Reveal from "@/components/animations/Reveal";
@@ -72,6 +72,16 @@ export default function ContactPage() {
                 >
                   <LinkedinIcon className="h-4 w-4" />
                   LinkedIn
+                </a>
+                <a
+                  href={SOCIALS.leetcode.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 border border-border px-8 py-5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                  data-cursor-text="OPEN"
+                >
+                  <LeetcodeIcon className="h-4 w-4" />
+                  LeetCode
                 </a>
               </div>
             </Reveal>

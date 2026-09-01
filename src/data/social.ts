@@ -6,8 +6,13 @@ export const SOCIALS = {
   },
   linkedin: {
     label: "LinkedIn",
-    handle: "kartik-sharma",
-    url: "https://www.linkedin.com/in/kartik-sharma",
+    handle: "kartik005204b283299",
+    url: "https://www.linkedin.com/in/kartik005204b283299",
+  },
+  leetcode: {
+    label: "LeetCode",
+    handle: "Kartik18852",
+    url: "https://leetcode.com/u/Kartik18852/",
   },
   email: {
     label: "Email",
