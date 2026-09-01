@@ -1,0 +1,26 @@
+# Render Blueprint — declarative deployment config for this portfolio.
+# Docs: https://render.com/docs/blueprint-spec
+# To deploy: Render dashboard -> New -> Blueprint -> select this repo.
+# Or connect the repo with a render.yaml and Render auto-applies it.
+
+services:
+  - type: web
+    name: portfolio
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    # Node >= 20.9 is required by Next.js 16 (repo uses 20.x types).
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # Public site URL drives sitemap.xml, robots.txt + OG metadata.
+      # Replace <YOUR-URL> with the Render service URL or custom domain.
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      # Optional: enables live GitHub stats + higher API rate limit.
+      # Create at https://github.com/settings/tokens (no scopes needed).
+      - key: GITHUB_TOKEN
+        sync: false
