@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function WorkIndexPage() {
   return (
-    <div className="px-5 pb-28 pt-32 md:px-10 md:pb-40 md:pt-40">
+    <div className="px-4 pb-16 pt-28 sm:px-5 sm:pb-24 sm:pt-32 md:px-10 md:pb-40 md:pt-40">
       <div className="mx-auto max-w-[1440px]">
         <Reveal>
           <SectionLabel index="01" label="Selected Work" className="mb-10" />
@@ -39,7 +39,7 @@ export default function WorkIndexPage() {
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              className="group grid grid-cols-1 gap-8 border-t border-border py-10 transition-colors last:border-b md:grid-cols-12 md:items-center md:gap-6 md:py-14"
+              className="group grid grid-cols-1 gap-4 border-t border-border py-8 transition-colors last:border-b sm:gap-6 sm:py-10 md:grid-cols-12 md:items-center md:gap-6 md:py-14"
               data-cursor-text="VIEW"
             >
               <div className="md:col-span-1">

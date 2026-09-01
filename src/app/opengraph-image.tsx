@@ -56,7 +56,7 @@ export default function OpengraphImage() {
           <span style={{ color: "#c8ff2e" }}>turn data into intelligence.</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 20, color: "#8e8c84" }}>
-          <span>kartik00052</span>
+          <span>Kartik Sharma</span>
           <span>github.com/kartik00052 ↗</span>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default async function GithubActivity() {
   return (
     <section
       id="github"
-      className="border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="border-t border-border px-4 py-16 sm:px-5 sm:py-20 md:px-10 md:py-40"
       data-nav-section
     >
       <div className="mx-auto max-w-[1440px]">

@@ -44,7 +44,7 @@ export default function ContactCTA() {
     <section
       id="contact"
       ref={ref}
-      className="relative overflow-hidden border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="relative overflow-hidden border-t border-border px-4 py-16 sm:px-5 sm:py-20 md:px-10 md:py-40"
       data-nav-section
     >
       <p
@@ -80,7 +80,7 @@ export default function ContactCTA() {
         </h2>
 
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div data-cta className="flex flex-wrap gap-4">
+          <div data-cta className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Magnetic>
               <a
                 href={`mailto:${email}?subject=Let's%20build%20something%20intelligent`}

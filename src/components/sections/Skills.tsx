@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="border-t border-border px-4 py-16 sm:px-5 sm:py-20 md:px-10 md:py-40"
       data-nav-section
     >
       <div className="mx-auto max-w-[1440px]">
@@ -32,7 +32,7 @@ export default function Skills() {
                   onMouseEnter={() => setActive(cat.id)}
                   onFocus={() => setActive(cat.id)}
                   onClick={() => setActive(cat.id)}
-                  className="group flex items-center gap-6 border-b border-border py-4 text-left md:py-5"
+                  className="group flex items-center gap-4 sm:gap-6 border-b border-border py-3 text-left sm:py-4 md:py-5"
                   aria-pressed={isActive}
                 >
                   <span className="label w-10 shrink-0 text-muted">

@@ -32,7 +32,7 @@ const FOCUS = [
 
 export default function AboutPage() {
   return (
-    <div className="px-5 pb-28 pt-32 md:px-10 md:pb-40 md:pt-40">
+    <div className="px-4 pb-16 pt-28 sm:px-5 sm:pb-24 sm:pt-32 md:px-10 md:pb-40 md:pt-40">
       <div className="mx-auto max-w-[1440px]">
         <Reveal>
           <SectionLabel index="01" label="About" className="mb-10" />

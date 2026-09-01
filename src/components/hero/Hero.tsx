@@ -71,13 +71,13 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative px-3 pb-6 pt-24 md:px-6 md:pb-8 md:pt-28"
+      className="relative px-3 pb-6 pt-24 sm:px-4 md:px-6 md:pb-8 md:pt-28"
       aria-label="Introduction"
     >
       <div className="mx-auto max-w-[1440px]">
         <div
           data-hero="panel"
-          className="relative flex min-h-[82svh] flex-col overflow-hidden rounded-card bg-peach"
+          className="relative flex min-h-[80svh] flex-col overflow-hidden rounded-card bg-peach"
         >
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
             <div
@@ -122,7 +122,7 @@ export default function Hero() {
             <HeroText />
             <div
               data-hero="visual"
-              className="w-full max-w-[380px] shrink-0 md:max-w-[460px]"
+              className="w-full max-w-[280px] shrink-0 sm:max-w-[340px] md:max-w-[460px]"
             >
               <CoderIllustration />
             </div>

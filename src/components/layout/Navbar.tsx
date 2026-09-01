@@ -80,21 +80,21 @@ export default function Navbar() {
     <>
       <div
         className={cn(
-          "fixed inset-x-0 top-3 z-[150] flex justify-center px-4 transition-transform duration-500",
+          "fixed inset-x-0 top-3 z-[150] flex justify-center px-3 sm:px-4 transition-transform duration-500",
           hidden ? "-translate-y-[150%]" : "translate-y-0"
         )}
       >
         <header
           ref={navRef}
-          className="pill flex w-full max-w-fit items-center gap-1 rounded-full py-1.5 pl-5 pr-2 shadow-[0_10px_40px_-12px_rgba(43,40,37,0.25)]"
+          className="pill flex w-full max-w-fit min-w-0 items-center gap-1 rounded-full py-1.5 pl-4 pr-2 sm:pl-5 shadow-[0_10px_40px_-12px_rgba(43,40,37,0.25)]"
         >
           <Link
             href="/"
             className="mr-3 flex items-center gap-2 text-foreground transition-transform duration-300 hover:scale-[0.92]"
-            aria-label="Devansh Dhama — home"
+            aria-label="Kartik Sharma — home"
           >
-            <span className="font-display text-lg font-semibold tracking-tight">
-              Devansh Dhama
+            <span className="font-display text-sm sm:text-lg font-semibold tracking-tight">
+              Kartik Sharma
             </span>
             <span
               className="h-1.5 w-1.5 rounded-full bg-accent"

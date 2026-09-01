@@ -169,7 +169,7 @@ export default function ProjectShowcase() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden border-t border-border px-5 py-28 md:px-10 md:py-40"
+      className="relative overflow-hidden border-t border-border px-4 py-16 sm:px-5 sm:py-20 md:px-10 md:py-40"
       data-nav-section
     >
       <div

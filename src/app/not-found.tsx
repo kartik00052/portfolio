@@ -5,7 +5,7 @@ import Reveal from "@/components/animations/Reveal";
 
 export default function NotFound() {
   return (
-    <div className="px-5 pb-28 pt-40 md:px-10 md:pb-40 md:pt-48">
+    <div className="px-4 pb-16 pt-32 sm:px-5 sm:pb-24 sm:pt-40 md:px-10 md:pb-40 md:pt-48">
       <div className="mx-auto max-w-[1440px]">
         <Reveal>
           <SectionLabel index="404" label="Not found" className="mb-10" />
